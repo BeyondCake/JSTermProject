@@ -1,0 +1,38 @@
+body
+{
+    background-color: beige;
+}
+
+textarea
+{
+    height: 100px;
+    width: 250px;
+    position: relative;
+    left: 45%;
+    top: 120px;
+    border-radius: 10px;
+}
+
+button
+{
+    width: 80px;
+    height: 20px;
+    margin: 5px;
+    position: relative;
+    top: 200px;
+    left: 30.5%;
+
+}
+
+.alienImage
+{
+    position: absolute;
+    left: 10px;
+}
+
+#storage
+{
+    position: relative;
+    left: 52.5%;
+    top: 120px;
+}
