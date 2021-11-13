@@ -1,0 +1,14 @@
+img{
+    width: 100%;
+}
+h2{
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% - 250px);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
