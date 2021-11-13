@@ -26,7 +26,10 @@ button.onclick = function checkText()
     if (text == 'storage')
     {
         storageLink()
-        console.log('hi')
+    }
+    if (text == 'plugin')
+    {
+        pluginLink()
     }
     if (text == 'bye')
     {
@@ -50,6 +53,19 @@ function storageLink()
     })
     //create a line of text called "Storage Link" which
     //needs to be href'd to storage.html
+}
+
+function pluginLink()
+{
+    var plugin = document.createElement("p")
+    plugin.textContent = "Plugin Link"
+    plugin.id = "plugin"
+    document.body.appendChild(plugin)
+    document.querySelector('#plugin').addEventListener("click", () => 
+    {
+        window.location.href = "plugin.html";
+    })
+    //copied storageLink for plugin
 }
 
 function showAlien()

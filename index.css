@@ -30,7 +30,7 @@ button
     left: 10px;
 }
 
-#storage
+#storage, #plugin
 {
     position: relative;
     left: 52.5%;
