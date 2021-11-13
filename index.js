@@ -1,7 +1,7 @@
 var textArea = document.createElement("textarea");
 textArea.className = "textbox"
 document.body.appendChild(textArea);
-
+//testing
 
 var submitButton = document.createElement("button");
 submitButton.id = "submit"
