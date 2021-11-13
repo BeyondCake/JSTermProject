@@ -83,5 +83,6 @@ function walk()
 
 function stop()
 {
-    
+    clearInterval(timer)
+    timer = null
 }
