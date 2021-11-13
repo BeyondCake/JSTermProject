@@ -6,7 +6,7 @@ document.body.appendChild(header);
 
 var title = document.createElement('p');
 title.className = 'intro';
-title.innerHTML = 'Local storage is a form of web storage that can store data for long periods of time. '
+title.innerHTML = 'Local storage is a form of web storage that can store data for long periods of time. Pre-Req? any sort of IDE, basic understanding of JS and a browser'
 document.body.appendChild(title)
 
 var introExplanation = document.createElement('p')
@@ -31,3 +31,16 @@ document.body.appendChild(disadvantages)
 
 
 //There's a link to storage in his example and just do a write up
+
+var insertKey = document.createElement('textarea')
+insertKey.className = 'insertKey'
+document.body.appendChild(insertKey)
+
+var insertValue = document.createElement('textarea')
+insertValue.className = 'insertValue'
+document.body.appendChild(insertValue);
+
+var insertButton = document.createElement('button')
+insertButton.className =  'insertButton'
+insertButton.textContent = 'Insert Values'
+document.body.appendChild(insertButton)
