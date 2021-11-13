@@ -19,19 +19,29 @@ body
     max-width: 30rem;
 }
 
-.insertKey, .insertValue
+#insertKey, #insertValue
 {
     position: relative;
-    left: 20%;
+    top: 5px;
+    left: 485px;
     margin: 10px;
     height: 70px;
 }
 
-.insertButton
+#insertButton
 {
     position: relative;
-    left: 27%;
-    bottom: 42px;
-    height: 75px;
-    width: 150px;
+    left: 500px;
+    bottom: 40px;
+    height: 40px;
+}
+
+#showOutput
+{
+    position: relative;
+    top: 100px;
+    right: 10px;
+    margin: 10px;
+    height: 70px;
+    width: 375px;
 }
