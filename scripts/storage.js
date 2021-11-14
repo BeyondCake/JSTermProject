@@ -33,14 +33,51 @@ document.body.appendChild(disadvantages)
 //There's a link to storage in his example and just do a write up
 
 var insertKey = document.createElement('textarea')
-insertKey.className = 'insertKey'
+insertKey.id = 'insertKey'
 document.body.appendChild(insertKey)
 
 var insertValue = document.createElement('textarea')
-insertValue.className = 'insertValue'
+insertValue.id = 'insertValue'
 document.body.appendChild(insertValue);
 
 var insertButton = document.createElement('button')
-insertButton.className =  'insertButton'
+insertButton.id =  'insertButton'
 insertButton.textContent = 'Insert Values'
 document.body.appendChild(insertButton)
+
+var showStorageKey = document.createElement('textarea')
+showStorageKey.id = 'showOutput'
+document.body.appendChild(showStorageKey)
+
+const inpKey = document.getElementById('insertKey')
+const inpValue = document.getElementById('insertValue')
+
+const showOutput = document.getElementById('showOutput')
+
+
+const btnInsert = document.getElementById('insertButton')
+
+
+btnInsert.onclick = function()
+{
+    const key = inpKey.value;
+    const value = inpValue.value;
+
+    console.log(key)
+    console.log(value)
+
+    if (key && value)
+    {
+        localStorage.setItem(key, value);
+        location.reload();
+    };
+
+    for (let i = 0; i < localStorage.length; i++)
+    {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+
+        showOutput.innerHTML += `${key}: ${value}<br />`;
+    }
+
+}
