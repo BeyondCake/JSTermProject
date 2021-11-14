@@ -2,32 +2,38 @@ body
 {
     background-color: beige;
 }
-
+textarea:focus-visible{
+    outline: none;
+}
 textarea
 {
-    height: 100px;
+    height: 20px;
     width: 250px;
     position: relative;
-    left: 45%;
-    top: 120px;
-    border-radius: 10px;
+    left: calc(50% - 125px);
+    top: 310px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    text-align: center;
 }
 
 button
 {
-    width: 80px;
-    height: 20px;
-    margin: 5px;
-    position: relative;
-    top: 200px;
-    left: 30.5%;
-
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 370px;
+    left: calc(50% - 50px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.alienImage
+#a
 {
     position: absolute;
     left: 10px;
+    top: 100px;
 }
 
 #storage, #plugin
@@ -35,4 +41,11 @@ button
     position: relative;
     left: 52.5%;
     top: 120px;
+}
+
+h1{
+    position: relative;
+    top: 0px;
+    text-align: center;
+    text-transform: uppercase;
 }

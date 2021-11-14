@@ -1,5 +1,5 @@
 var textArea = document.createElement("textarea");
-textArea.className = "textbox"
+textArea.className = "textbox";
 document.body.appendChild(textArea);
 //testing
 
@@ -39,6 +39,10 @@ button.onclick = function checkText()
     {
         stop()
     }
+    if (text == 'ajax')
+    {
+        getAdvice();
+    }
 }
 
 function storageLink()
@@ -74,8 +78,6 @@ function showAlien()
     alienImage.id="a"
     alienImage.src = "images/alien/alienrwalk0.gif"
     document.body.appendChild(alienImage)
-    a.style.position = 'absolute'
-    a.style.left = 0
     //This just renders the alien onto the page. 
 }
 
@@ -101,4 +103,20 @@ function stop()
 {
     clearInterval(timer)
     timer = null
+}
+
+function getAdvice(){
+    var request = new XMLHttpRequest()
+    request.open("GET", "../advice.txt", true)
+    var h1 = document.createElement('h1')
+    h1.id = "advice";
+    document.body.appendChild(h1)
+    
+    request.onload = function() {
+        var newtext = document.createTextNode(request.responseText),
+        advice1 = document.getElementById("advice");
+        advice1.appendChild(newtext);
+        advice1.innerHTML = request.responseText
+    }
+    request.send()
 }
