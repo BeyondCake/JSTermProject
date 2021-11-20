@@ -21,7 +21,7 @@ button.onclick = function checkText()
     if (text == 'walk')
     {
         timer = window.setInterval(walk, 100) //moved setInterval from walk function to here 
-        console.log('text is step')
+        a.style.left = parseInt(a.style.left) + 2 + 'px'
     }
     if (text == 'storage')
     {
@@ -42,16 +42,17 @@ button.onclick = function checkText()
 //<<<<<<< HEAD
     if (text == 'run')
     {
+        timer = window.setInterval(run, 20)
+        a.style.left = parseInt(a.style.left) + 5 + 'px'
         run()
     }
     if (text == 'clear')
     {
         clear()
-//=======
+    }
     if (text == 'ajax')
     {
         getAdvice();
-//>>>>>>> fe47168470795140516daa5b7f5fa20fe2ed5307
     }
 }
 
@@ -87,6 +88,8 @@ function showAlien()
     var alienImage = document.createElement("img")
     alienImage.id="a"
     alienImage.src = "images/alien/alienrwalk0.gif"
+    alienImage.style.position = "absolute";
+    alienImage.style.left = "0";
     document.body.appendChild(alienImage)
     //This just renders the alien onto the page. 
 }
@@ -106,13 +109,13 @@ function step()
 function walk()
 {
     step()
-    a.style.left = parseInt(a.style.left) + 1 + 'px'
+    a.style.left = parseInt(a.style.left) + 2 + 'px'
 }
 
 function run()
 {
     step()
-    a.style.left = parseInt(a.style.left) + 5 + 'px'
+    a.style.left = parseInt(a.style.left) + 2 + 'px'
 }
 
 function stop()
@@ -128,23 +131,22 @@ function stop()
 function clear()
 {
     location.reload();
+}
 
-    //=======
 
-    function getAdvice(){
+function getAdvice()
+{
     var request = new XMLHttpRequest()
     request.open("GET", "../advice.txt", true)
     var h1 = document.createElement('h1')
     h1.id = "advice";
     document.body.appendChild(h1)
-    
+
     request.onload = function() {
-        var newtext = document.createTextNode(request.responseText),
-        advice1 = document.getElementById("advice");
-        advice1.appendChild(newtext);
-        advice1.innerHTML = request.responseText
-    }
+    var newtext = document.createTextNode(request.responseText),
+    advice1 = document.getElementById("advice");
+    advice1.appendChild(newtext);
+    advice1.innerHTML = request.responseText
     request.send()
-//>>>>>>> fe47168470795140516daa5b7f5fa20fe2ed5307
-}
+    }
 }
