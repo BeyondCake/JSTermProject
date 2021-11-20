@@ -39,6 +39,14 @@ button.onclick = function checkText()
     {
         stop()
     }
+    if (text == 'run')
+    {
+        run()
+    }
+    if (text == 'clear')
+    {
+        clear()
+    }
 }
 
 function storageLink()
@@ -94,11 +102,25 @@ function step()
 function walk()
 {
     step()
-    a.style.left = parseInt(a.style.left) + 2 + 'px'
+    a.style.left = parseInt(a.style.left) + 1 + 'px'
+}
+
+function run()
+{
+    step()
+    a.style.left = parseInt(a.style.left) + 5 + 'px'
 }
 
 function stop()
 {
-    clearInterval(timer)
-    timer = null
+    if(timer != null)
+    {
+        clearInterval(timer)
+        timer = null
+    }
+}
+
+function clear()
+{
+    location.reload();
 }
