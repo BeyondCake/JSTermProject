@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <title>Document</title>
-<script src="/scripts/alphabet.js"></script>
+<script >
+    onload = function()
+    {
+        var d1 = document.createElement('div')
+        d1.id = "div_one"
+        document.body.appendChild(d1)
+
+        for (let i = 'z'.charCodeAt(0); i>= 'a'.charCodeAt(0); i--)
+        {
+            var letter = String.fromCharCode(i)
+            var im = document.createElement('img')
+
+            im.id = "letter"
+            im.style.width = '40px'
+            im.src = './images/letters/' + letter + ".png"
+
+            im.onclick = changeSource()
+        }
+    }
+
+    function changeSource()
+    {
+        var img = document.getElementsByTagName('img')
+        for(let i = 0; i < img.length; i++)
+        {
+            img[i].src = this.src
+        }
+    }
+</script>
 </head>
 <body>
-    <p>This is for the alphabet images</p>
+    <p></p>
 </body>
 </html>

@@ -54,6 +54,23 @@ button.onclick = function checkText()
     {
         getAdvice();
     }
+    if (text == 'alphabet')
+    {
+        showAlphpabet();
+    }
+}
+
+function showAlphpabet()
+{
+    var link = document.createElement('p')
+    link.textContent = "alphabet link"
+    link.id = "link"
+    document.body.appendChild(link)
+
+    document.querySelector('#link').addEventListener("click", () => 
+    {
+        window.location.href = "alphabet.html";
+    })
 }
 
 function storageLink()

@@ -1,1 +1,2 @@
-It's not too late to switch professions.
+// not too late to switch professions.
+["It's", "not"]
