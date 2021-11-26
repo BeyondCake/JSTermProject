@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script >
     onload = function()
@@ -11,14 +14,19 @@
 
         for (let i = 'z'.charCodeAt(0); i>= 'a'.charCodeAt(0); i--)
         {
+            //var getImage = "images/letters/" + letter + ".png"
             var letter = String.fromCharCode(i)
             var im = document.createElement('img')
-
             im.id = "letter"
+            d1.appendChild(im)
+            
+            //console.log(getImage)
+            
             im.style.width = '40px'
-            im.src = './images/letters/' + letter + ".png"
+            im.src = 'images/letters/' + letter + ".png"
+            console.log(im.src)
 
-            im.onclick = changeSource()
+            im.onclick = changeSource;
         }
     }
 
