@@ -37,18 +37,18 @@ button.onclick = function checkText()
     }
     if (text == 'stop')
     {
-        stop()
+        stop();
     }
 //<<<<<<< HEAD
     if (text == 'run')
     {
         timer = window.setInterval(run, 20)
         a.style.left = parseInt(a.style.left) + 5 + 'px'
-        run()
+        run();
     }
     if (text == 'clear')
     {
-        clear()
+        clear();
     }
     if (text == 'ajax')
     {
@@ -153,17 +153,18 @@ function clear()
 
 function getAdvice()
 {
-    var request = new XMLHttpRequest()
-    request.open("GET", "../advice.txt", true)
-    var h1 = document.createElement('h1')
+    var request = new XMLHttpRequest();
+    request.open("GET", "../advice.txt", true);
+    var h1 = document.createElement('h1');
     h1.id = "advice";
-    document.body.appendChild(h1)
+    document.body.appendChild(h1);
 
     request.onload = function() {
     var newtext = document.createTextNode(request.responseText),
     advice1 = document.getElementById("advice");
     advice1.appendChild(newtext);
-    advice1.innerHTML = request.responseText
-    request.send()
+    advice1.innerHTML = request.responseText;
+    
     }
+    request.send();
 }
