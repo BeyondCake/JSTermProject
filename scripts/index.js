@@ -1,3 +1,6 @@
+//index, alphabet, storage done by Eugene
+//ajax, plugin was done by Mykel
+
 var textArea = document.createElement("textarea");
 textArea.className = "textbox";
 document.body.appendChild(textArea);
@@ -40,7 +43,7 @@ button.onclick = function checkText()
     }
     if (text == 'run')
     {
-        timer = window.setInterval(run, 50)
+        timer = window.setInterval(run, 10)
     }
     if (text == 'clear')
     {

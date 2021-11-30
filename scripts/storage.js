@@ -6,17 +6,16 @@ document.body.appendChild(header);
 
 var title = document.createElement('p');
 title.className = 'intro';
-title.innerHTML = 'Local storage is a form of web storage that can store data for long periods of time. Pre-Req? any sort of IDE, basic understanding of JS and a browser'
-document.body.appendChild(title)
+title.innerHTML = 'Local storage is a form of web storage that can store data for long periods of time'
 
 var introExplanation = document.createElement('p')
 introExplanation.className = 'explanation'
-introExplanation.innerHTML = 'However, local storage can only store strings. Since you can only store strings, if you want to store any data, you MUST stringify it. i.e. JSON.stringify(...)'
+introExplanation.innerHTML = 'However, local storage can only store strings. if you want to store any data, you MUST stringify it. i.e. JSON.stringify(...). THere are also commands such as getItem(), removeItem(), removeItem()'
 document.body.appendChild(introExplanation)
 
 var whenToUse = document.createElement('p')
 whenToUse.className = "when"
-whenToUse.innerHTML = 'If the information/data is not in need of being stored somewhere with high security, using local storage is easier/faster. Also, to note, after you are done with your data, which would most likely be sent to a server, it is good practice to clear your storage'
+whenToUse.innerHTML = 'using local storage is easier/faster. Also, to note, after you are done with your data, it is good practice to clear your storage'
 document.body.appendChild(whenToUse)
 
 var limits = document.createElement('p')
@@ -69,7 +68,7 @@ btnInsert.onclick = function()
     if (key && value)
     {
         localStorage.setItem(key, value);
-        location.reload();
+        //location.reload();
     };
 
     for (let i = 0; i < localStorage.length; i++)
@@ -77,7 +76,7 @@ btnInsert.onclick = function()
         const key = localStorage.key(i);
         const value = localStorage.getItem(key);
 
-        showOutput.innerHTML += `${key}: ${value}<br />`;
+        showOutput.innerHTML += `${key}: ${value}`;
     }
 
 }
