@@ -20,8 +20,7 @@ button.onclick = function checkText()
     }
     if (text == 'walk')
     {
-        timer = window.setInterval(walk, 100) //moved setInterval from walk function to here 
-        a.style.left = parseInt(a.style.left) + 2 + 'px'
+        timer = window.setInterval(walk, 100) 
     }
     if (text == 'storage')
     {
@@ -39,12 +38,9 @@ button.onclick = function checkText()
     {
         stop();
     }
-//<<<<<<< HEAD
     if (text == 'run')
     {
-        timer = window.setInterval(run, 20)
-        a.style.left = parseInt(a.style.left) + 5 + 'px'
-        run();
+        timer = window.setInterval(run, 50)
     }
     if (text == 'clear')
     {
@@ -57,6 +53,10 @@ button.onclick = function checkText()
     if (text == 'alphabet')
     {
         showAlphpabet();
+    }
+    if (text == 'left')
+    {
+        comeBack()
     }
 }
 
@@ -113,11 +113,17 @@ function showAlien()
 
 timer = null
 stepNumber = 0
+direction = "right"
 
 function step()
 {
     let walkNumber = stepNumber % 30
-    a.src = "images/alien/alienrwalk" + walkNumber + ".gif"
+    if(direction == "right"){
+        a.src = "images/alien/alienrwalk" + walkNumber + ".gif"
+    }
+    else{
+        a.src = "images/alien/alienlwalk" + walkNumber + ".gif"
+    }
     stepNumber += 1
 }
 
@@ -126,13 +132,27 @@ function step()
 function walk()
 {
     step()
-    a.style.left = parseInt(a.style.left) + 2 + 'px'
+    if(direction == "right"){
+        a.style.left = parseInt(a.style.left) + 2 + 'px'
+    } else if (direction == "left"){
+        a.style.left = parseInt(a.style.left) - 2 + 'px'
+    }
+    if((parseInt(a.style.left) + a.width) > window.outerWidth - 20){
+        direction = "left"
+    }
 }
 
 function run()
 {
     step()
-    a.style.left = parseInt(a.style.left) + 2 + 'px'
+    if(direction == "right"){
+        a.style.left = parseInt(a.style.left) + 2 + 'px'
+    } else if (direction == "left"){
+        a.style.left = parseInt(a.style.left) - 2 + 'px'
+    }
+    if((parseInt(a.style.left) + a.width) > window.outerWidth - 20){
+        direction = "left"
+    }
 }
 
 function stop()
@@ -150,7 +170,7 @@ function clear()
     location.reload();
 }
 
-
+//======================
 function getAdvice()
 {
     var request = new XMLHttpRequest();
